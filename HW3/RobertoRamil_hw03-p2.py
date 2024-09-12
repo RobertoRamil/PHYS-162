@@ -26,8 +26,16 @@ def Range(th0):
     deg = np.deg2rad(th0)
     return (v0**2)/g *(np.sin(2*deg))
 
+t = np.arange(0, Range(th0),.1)
+
 
 plt.figure("A")
+
+plt.plot(Xpos(t,th0),
+         Ypos(t,th0),
+         linestyle = '--',
+         color = 'red',
+         )
 
 
 plt.legend()
