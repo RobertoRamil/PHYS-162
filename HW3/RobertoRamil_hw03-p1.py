@@ -1,10 +1,8 @@
 name = input("Please enter your name: ")
 print(f"Hello {name}!")
 
-x = input("Please enter 2 numbers, x and y: ")
-y = input()
-x = int(x)
-y = int(y)
+x = float(input("Please enter 2 numbers, x and y: "))
+y = float(input())
 sum = x+y
 dif = x-y
 product = x*y
