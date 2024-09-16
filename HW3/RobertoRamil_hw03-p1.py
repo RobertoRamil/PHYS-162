@@ -1,7 +1,8 @@
 name = input("Please enter your name: ")
 print(f"Hello {name}!")
 
-x, y = input("Please enter 2 numbers, x and y: ").split()
+x = input("Please enter 2 numbers, x and y: ")
+y = input()
 x = int(x)
 y = int(y)
 sum = x+y

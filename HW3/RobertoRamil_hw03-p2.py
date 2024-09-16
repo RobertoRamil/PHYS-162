@@ -2,7 +2,7 @@ import sys
 import matplotlib.pyplot as plt
 import numpy as np
 
-x0, y0, v0, th0, g = 0, 0, 0, 0, 9.8
+x0, v0, th0, g = 0, 0, 0, 9.8
 
 if len(sys.argv) != 4:
     print("Usage: python3 RobertoRamil_hw03-p2.py y0 v0 th0")
@@ -40,6 +40,8 @@ plt.plot(Xpos(t,th0),
 
 
 plt.legend()
+plt.xlabel("Time")
+plt.ylabel("Height")
 plt.title("Projectile from Inserted Values")
 plt.ylim(bottom = 0)
 plt.xlim(0,40)

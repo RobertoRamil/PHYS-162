@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-x, y, z = np.loadtxt("hw03-data.txt", delimiter=' ', skiprows= 3, usecols={1, 2, 4}, unpack= True)
+x, y, z = np.loadtxt("hw03-data.txt", delimiter=' ', skiprows= 3, usecols={0, 1, 3}, unpack= True)
 
 plt.figure("A")
 
@@ -39,5 +39,7 @@ with open("out-p3.txt", 'w') as file:
 
 plt.legend()
 plt.title("Curves based on data.txt")
+plt.xlabel("X")
+plt.ylabel("Y")
 plt.savefig("RobertoRamil_hw03-p3_fig.pdf")
 plt.show()
