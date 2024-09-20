@@ -5,7 +5,7 @@ def Xpos(t, v0, th0):
     deg = np.deg2rad(th0)
     return x0 + v0*t*np.cos(deg)
 
-def Ypos(t, v0, th0):
+def Ypos(t, y0, v0, th0):
     deg = np.deg2rad(th0)
     return y0 + v0*t*np.sin(deg)-1/2*(g)*(t**2)
 
@@ -15,10 +15,10 @@ def plot_traj(y0,v0,th0,tmax,color):
     x_vals = Xpos(t_vals, v0, th0)
     y_vals = Ypos(t_vals, y0, v0, th0)
     
-    plt.plot(x_vals, y_vals, color, 
+    plt.plot(x_vals, y_vals, color = color, 
              label = f'y0 = {y0}m, v0 = {v0}m/s, th0 = {th0}°')
     
-    plt.plot(x_vals[-1], y_vals[-1], 'o', color)
+    plt.plot(x_vals[-1], y_vals[-1], 'o', color=color)
 
 def tland(y0, v0, th0):
     dt = .01
