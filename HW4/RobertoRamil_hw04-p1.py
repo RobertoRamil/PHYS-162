@@ -33,8 +33,8 @@ x0, g = 0, 9.8
 
 
 plt.figure()
-y0 = int(input("Entre the initial height for y0 (in meters): "))
-angles = list(map(int, input("Enter a list of angles: ").split()))
+y0 = float(input("Entre the initial height for y0 (in meters): "))
+angles = list(map(float, input("Enter a list of angles: ").split()))
 
 with open("v0vals.txt", "r") as file:
     v0_vals = list(map(int, file.readline().split(',')))
