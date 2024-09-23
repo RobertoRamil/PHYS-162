@@ -41,13 +41,13 @@ with open("v0vals.txt", "r") as file:
     v0_vals = list(map(int, file.readline().split(',')))
     
 colors = ['b', 'g', 'r', 'c', 'm', 'y', 'k']
-color_in = 0
+color_index = 0
 
 for v0 in v0_vals:
     for th0 in angles:
         tmax = tland(y0, v0, th0)
-        plot_traj(y0, v0, th0, tmax, colors[color_in %len(colors)])
-        color_in += 1
+        plot_traj(y0, v0, th0, tmax, colors[color_index %len(colors)])
+        color_index += 1
 
 plt.legend()
 plt.title("Projctiles")
