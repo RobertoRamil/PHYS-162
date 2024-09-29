@@ -19,7 +19,7 @@ def plot_traj(y0,v0,th0,tmax,color):
     plt.plot(x_vals, y_vals, color = color, 
              label = f'y0 = {y0}m, v0 = {v0}m/s, th0 = {th0}°')
     
-    plt.plot(x_vals[-1], y_vals[-1], 'o', color=color)
+    plt.plot(x_vals[-1], y_vals[-1], marker = 'o', color=color)
 
 def tland(y0, v0, th0):
     dt = .01
@@ -31,14 +31,18 @@ def tland(y0, v0, th0):
 
 x0, g = 0, 9.8
 
-
+if len(sys.argv) <2:
+    print("Usage: python3 RobertoRamil_hw04-p1.py angles")
+    print("Expected name of file then a list of numbers for different angles")
+    sys.exit(1)
 
 plt.figure()
 y0 = float(input("Entre the initial height for y0 (in meters): "))
 angles = list(map(float, sys.argv[1:]))
 
 with open("v0vals.txt", "r") as file:
-    v0_vals = list(map(int, file.readline().split(',')))
+    stringvals = file.readline().split(',')
+    v0_vals = list(map(int, stringvals))
     
 colors = ['b', 'g', 'r', 'c', 'm', 'y', 'k']
 color_index = 0
