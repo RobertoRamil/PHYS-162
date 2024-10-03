@@ -98,5 +98,5 @@ ax4.text(20,10, f'$y_0$ = {y0} m\n$v_0$ = {v0} m/s\n$\\theta_0$ = {th0}°')
 
 
 
-plt.savefig("RobertoRamil_hw05-p1_fig1.pdf")
+plt.savefig("RobertoRamil_hw05-p1_fig.pdf")
 plt.show()

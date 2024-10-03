@@ -63,5 +63,5 @@ ax4.set_xticklabels([r'$10^-2$',r'$10^-1$',r'$10^0$'])
 ax4.set_title("Subplot 224")
 
 
-plt.savefig('RobertoRamil_hw05-p2_fig1.pdf')
+plt.savefig('RobertoRamil_hw05-p2_fig.pdf')
 plt.show()
