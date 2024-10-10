@@ -49,7 +49,7 @@ ax3.legend()
 
 #plot 4
 ax4 = plt.subplot2grid((2,2),(1,1))
-x = np.arange(.01,np.pi,.001)
+x = np.arange(.2,np.pi,.001)
 y = np.sin(1/x)
 val=np.arange(1, int(1/(.01*np.pi))+1)
 zx = 1/(val*np.pi)
