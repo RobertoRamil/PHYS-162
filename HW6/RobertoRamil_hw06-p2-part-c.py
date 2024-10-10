@@ -19,7 +19,7 @@ for guess in initial_guess:
 solutions = np.unique(solutions, axis = 0)[:5]
 
 print ("Solutions for the system of eqations: ", solutions)
-
+plt.figure()
 x_vals = np.linspace(0,5,100)
 y_vals = np.linspace(0,5,100)
 X,Y = np.meshgrid(x_vals,y_vals)

@@ -16,7 +16,7 @@ for guess in initial_guess:
 solutions = np.unique(solutions)[:5]   
 
 print("Solutions for x = 8 cos(x): ", solutions)
-
+plt.figure()
 x_vals = np.linspace(1,10,400)
 plt.plot(
     x_vals,
