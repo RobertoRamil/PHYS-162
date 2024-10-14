@@ -38,7 +38,7 @@ plt.figure()
 plt.plot(
     xvals,
     gYvals,
-    label = "Ground y(x) = x^(1/3) "
+    label = r'Ground $y(x) = x^{1/3}$'
 )
 landing_points =[]
 for v0 in v0_vals:
@@ -56,7 +56,7 @@ for v0 in v0_vals:
     t_val = np.linspace(0, t_flight, 500)
     
     plt.plot(Xpos(t_val, th0), Ypos(t_val, th0),
-             label = f'v0 = {v0} m/s'
+             label = f'$v_0$ = {v0} m/s'
              )
     plt.scatter(
         landx, landy,
