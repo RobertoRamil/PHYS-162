@@ -5,7 +5,7 @@ from scipy.optimize import fsolve
 def system(vars):
     x, y = vars
     eq1 = x**5 - y**3 + y**2 - np.sin(x)
-    eq2 = y**5 - x**3 + 1
+    eq2 = y**5 - x**3 + 1/4 * (np.cos(x)**2 - .98)
     return [eq1, eq2]
 
 initial_guess = [(1,1),(2,2),(3,3),(4,4),(5,5)]
@@ -13,8 +13,9 @@ solutions = []
 
 for guess in initial_guess:
     sol = fsolve(system, guess)
-    if all(val > 0 for val in sol) and not any(np.allclose(sol, exsisting_sol) for exsisting_sol in solutions):
-        solutions.append(sol)
+    if all(val > 0 for val in sol) and not any(np.allclose(sol, exsisting_sol)
+        for exsisting_sol in solutions):
+            solutions.append(sol)
         
 solutions = np.unique(solutions, axis = 0)[:5]
 
@@ -34,7 +35,6 @@ plt.contour(
     levels = [0],
     colors = 'blue',
     linewidths = 2,
-    clabel = f'$x^5 -y^3+y^2=sin(x)$'
 )
 plt.contour(
     X,
@@ -43,7 +43,6 @@ plt.contour(
     levels = [0],
     colors = 'orange',
     linewidths = 2,
-    clabel = f'$y^5 -x^3=-1/4(cos^2(x)-.98$'
 )
 plt.scatter(
     solutions[:,0],
