@@ -18,7 +18,7 @@ def gFunction(x):
 
 def bisection(int1, int2, prec):
     while (int1 - int2)/2 > prec:
-        xmid = (int1 - int2)/2
+        xmid = (int1 + int2)/2
         t = (xmid - x0)/(v0*np.cos(np.deg2rad(th0)))
         ymid = Ypos(t,th0)
         
