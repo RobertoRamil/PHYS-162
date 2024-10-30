@@ -49,7 +49,6 @@ t_engine_off = np.linspace(t_engine_on[-1], 100, 100)
 #Calc x,y,vx, vy when the engine is off
 x_off, y_off, v_x_off, v_y_off, ssd = calc_motion(a_acel_off[0], a_acel_off[1], v_x_on[-1], v_y_on[-1], t_engine_off-t_engine_on[-1], x_on[-1], y_on[-1])
 t_engine_off = np.linspace(t_engine_on[-1], ssd, 100)
-print(ssd)
 x_off, y_off, v_x_off, v_y_off, ssd = calc_motion(a_acel_off[0], a_acel_off[1], v_x_on[-1], v_y_on[-1], t_engine_on[-1]-t_engine_off, x_on[-1], y_on[-1])
 
 a_slow_down = (.61, 6.9)
@@ -405,7 +404,6 @@ ax2.set_frame_on(False)
 ax3.set_frame_on(False)
 ax4.set_frame_on(False)
 ax5.set_frame_on(False)
-
 
 plt.tight_layout()
 plt.savefig("RobertoRamil_M1_p1.pdf")
