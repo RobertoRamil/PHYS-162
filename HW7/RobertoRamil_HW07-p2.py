@@ -1,8 +1,15 @@
 import numpy as np
 import matplotlib.pyplot as plt
+from scipy.optimize import curve_fit
 
 
 x, y = np.loadtxt('HW07-linearFit.dat', unpack=True)
+
+def polynomial_model(x, *coeffs):
+    result = 0
+    for i, c in enumerate(coeffs):
+        result += c*x **i
+    return result
 
 degrees = np.arange(11)
 
@@ -11,12 +18,14 @@ plt.figure()
 plt.scatter(x, y, color = 'b', label = 'Data')
 
 for i in degrees:
-    coeffs = np.polyfit(x, y, i)
-    poly = np.poly1d(coeffs)
+    initial_guess = np.ones(i+1)
     
-    y_fit = poly(x)
+    coeffs, _ = curve_fit(polynomial_model, x, y, p0=initial_guess)
     
-    plt.plot(x, y_fit, label = f'Degrees {i}')
+    x_fit = np.linspace(min(x), max(x), 100)
+    y_fit = polynomial_model(x_fit, *coeffs)
+    
+    plt.plot(x_fit, y_fit, label = f'Degrees {i}')
 
 
 print("I found that around 10 lines or so is when it gets pretty good.")
