@@ -2,7 +2,6 @@
 #include <cmath>
 #include <cstdlib>
 #include <iomanip>
-#include <String>
 
 using std::cout;
 using std::cin;
